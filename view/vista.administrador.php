@@ -1,13 +1,9 @@
 <?php
 require_once "../services/connection.php";
 session_start();
-//Hay que añadir si el usuario es administrador redirigirlo a una pagina admin donde solo pueda hacer crud de usuarios y eventos
-if ($_SESSION['tipo_user']=='administrador') {
-    header("location:vista.administrador.php");
-}
-if ($_SESSION['email']=="") {
+if ($_SESSION['email']=="" || $_SESSION['tipo_user']!='administrador') {
     header("location:login.html");
-}else {
+}
     ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -17,7 +13,7 @@ if ($_SESSION['email']=="") {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="../css/styles.css">
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-        <title>Intranet</title>
+        <title>Administrador</title>
     </head>
     <body>
         <!--Header-->
@@ -32,11 +28,8 @@ if ($_SESSION['email']=="") {
         <div class="row padding-top padding-lat">
             <div class="fondo">
                 <button type="submit"><a type='button' href='vistahistorial.php'>Ver historial de reservas</a></button>
-                <?php
-                    if ($_SESSION['tipo_user']=='mantenimiento') {
-                        echo "<button type='submit'><a type='button' href='vistaincidencia.php'>Ver incidencias</a></button>";
-                    }
-                ?>
+                <button type='submit'><a type='button' href='usuarios.php'>Ver usuarios</a></button>
+                <button type="submit"><a type='button' href='formcrearmesa.php'>Crear mesa</a></button>
                 <form action="zona.admin.php" method="post">
                     <div class="column-2">
                         <label for="localizacion">Ubicacion</label><br>
@@ -107,7 +100,6 @@ if ($_SESSION['email']=="") {
             echo  "<th class='blue'>Localizacion</th>";
             echo  "<th class='blue'>Nº Mesas</th>";
             echo  "<th class='blue'>Nº Personas</th>";
-            echo  "<th class='blue'>Disponibilidad</th>";
             echo  "</tr>";
             foreach ($filtrar as $row) {
                 //Ponemos primero la localización
@@ -116,26 +108,8 @@ if ($_SESSION['email']=="") {
                         echo "<td class='gris'>{$row['nombre_localizacion']}</td>";
                         echo "<td class='gris'>{$row['mesa']}</td>";
                         echo "<td class='gris'>{$row['silla']}</td>";
-                        switch ($row['disponibilidad']) {
-                            case 'si':
-                                echo "<td class='gris'><i class='fas fa-check green'></i></td>";
-                                echo "<td><button type='submit'><a type='button' href='../proceses/agregareserva.php?idmesa={$row['id_mesa']}'>Añadir reserva</a></button></td>";
-                                echo "<td><button type='submit'><a type='button' href='formincidencia.php?idmesa={$row['id_mesa']}&idlocalizacion={$row['id_localizacion']}'>Añadir Incidencia</a></button></td>";
-                                break;
-                            
-                            case 'no':
-                                echo "<td class='gris'><i class='fas fa-times red'></i></td>";
-                                echo "<td><button type='submit'><a type='button' href='../proceses/eliminareserva.php?idmesa={$row['id_mesa']}'>Quitar reserva</a></button></td>";
-                                break;
-                            case 'mantenimiento':
-                                if ($_SESSION['tipo_user']=='camarero') {
-                                    echo "<td class='gris'><i class='fas fa-briefcase brown'></i></td>";
-                                }else{
-                                    echo "<td class='gris'><i class='fas fa-briefcase brown'></i></td>";
-                                    echo "<td><button type='submit'><a type='button' href='../proceses/eliminarincidencia.php?idmesa={$row['id_mesa']}'>Eliminar Incidencia</a></button></td>";
-                                }
-                                break;
-                        }
+                        echo "<td><button type='submit'><a type='button' href='../view/formmodificarmesa.php?id={$row['id_mesa']}'>Modificar mesa</a></button></td>";
+                        echo "<td><button type='submit'><a type='button' href='../proceses/eliminarmesa.php?id={$row['id_mesa']}&disponibilidad={$row['disponibilidad']}'>Eliminar mesa</a></button></td>";  
                 echo "</tr>";
             }
             echo "</table>";
@@ -158,7 +132,6 @@ if ($_SESSION['email']=="") {
                 echo  "<th class='blue'>Localizacion</th>";
                 echo  "<th class='blue'>Nº de Mesas</th>";
                 echo  "<th class='blue'>Nº Personas</th>";
-                echo  "<th class='blue'>Disponibilidad</th>";
                 echo  "</tr>";
                 foreach ($sentencia as $localizacion) {
                     //Ponemos primero la localización
@@ -167,30 +140,8 @@ if ($_SESSION['email']=="") {
                         echo "<td class='gris'>{$localizacion['nombre_localizacion']}</td>";
                         echo "<td class='gris'>{$localizacion['mesa']}</td>";
                         echo "<td class='gris'>{$localizacion['silla']}</td>";
-                        switch ($localizacion['disponibilidad']) {
-                            case 'si':
-                                echo "<td class='gris'><i class='fas fa-check green'></i></td>";
-                                if ($_SESSION['tipo_user']=='mantenimiento') {
-                                    echo "<td><button type='submit'><a type='button' href='formincidencia.php?idmesa={$localizacion['id_mesa']}&idlocalizacion={$localizacion['id_localizacion']}'>Añadir Incidencia</a></button></td>";
-                                }else{
-                                    echo "<td><button type='submit'><a type='button' href='../proceses/agregareserva.php?idmesa={$localizacion['id_mesa']}'>Añadir reserva</a></button></td>";
-                                    echo "<td><button type='submit'><a type='button' href='formincidencia.php?idmesa={$localizacion['id_mesa']}&idlocalizacion={$localizacion['id_localizacion']}'>Añadir Incidencia</a></button></td>";
-                                }     
-                                break;
-                            
-                            case 'no':
-                                echo "<td class='gris'><i class='fas fa-times red'></i></td>";
-                                echo "<td><button type='submit'><a type='button' href='../proceses/eliminareserva.php?idmesa={$localizacion['id_mesa']}'>Quitar reserva</a></button></td>";
-                                break;
-                            case 'mantenimiento':
-                                if ($_SESSION['tipo_user']!='mantenimiento') {
-                                    echo "<td class='gris'><i class='fas fa-briefcase brown'></i></td>";
-                                }else{
-                                    echo "<td class='gris'><i class='fas fa-briefcase brown'></i></td>";
-                                    echo "<td><button type='submit'><a type='button' href='../proceses/eliminarincidencia.php?idmesa={$localizacion['id_mesa']}'>Eliminar Incidencia</a></button></td>";
-                                }
-                                break;
-                        }             
+                        echo "<td><button type='submit'><a type='button' href='../view/formmodificarmesa.php?id={$localizacion['id_mesa']}'>Modificar mesa</a></button></td>";
+                        echo "<td><button type='submit'><a type='button' href='../proceses/eliminarmesa.php?id={$localizacion['id_mesa']}&disponibilidad={$localizacion['disponibilidad']}'>Eliminar mesa</a></button></td>";             
                     echo "</tr>";
                 }
                 echo "</table>";
@@ -200,6 +151,3 @@ if ($_SESSION['email']=="") {
        ?>
     </body>
     </html>
-<?php
-}
-?>

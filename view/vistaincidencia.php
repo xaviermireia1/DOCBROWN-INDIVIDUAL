@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once '../services/connection.php';
-if (($_SESSION['email']=="") || ($_SESSION["tipo_user"]=="camarero")) {
+if (($_SESSION['email']=="") || ($_SESSION["tipo_user"]!="mantenimiento")) {
     header("location:login.html");
 }else {
     ?>
@@ -40,7 +40,7 @@ if (($_SESSION['email']=="") || ($_SESSION["tipo_user"]=="camarero")) {
             //Con filtros
             if (isset($_POST['filtrar'])) {
                 $nombre=$_POST["nombre"];
-                $filtro=$pdo->prepare("SELECT * FROM tbl_incidencia WHERE nombre like '%{$nombre}%' ORDER BY fecha_inicio_incidencia DESC,hora_inicio_incidencia DESC");
+                $filtro=$pdo->prepare("SELECT tbl_incidencia.*,tbl_usuario.nombre FROM tbl_incidencia INNER JOIN tbl_usuario on tbl_incidencia.email=tbl_usuario.email WHERE tbl_usuario.nombre like '%{$nombre}%' ORDER BY fecha_inicio_incidencia DESC,hora_inicio_incidencia DESC");
                 $filtro->execute();
                 $filtrar=$filtro->fetchAll(PDO::FETCH_ASSOC);               
                 if (empty($filtrar)) {
@@ -96,7 +96,7 @@ if (($_SESSION['email']=="") || ($_SESSION["tipo_user"]=="camarero")) {
                 }
                 //Sin filtros
             }else {
-                $sinfiltro=$pdo->prepare("SELECT * FROM tbl_incidencia ORDER BY fecha_inicio_incidencia DESC,hora_inicio_incidencia DESC");
+                $sinfiltro=$pdo->prepare("SELECT tbl_incidencia.*,tbl_usuario.nombre FROM tbl_incidencia INNER JOIN tbl_usuario on tbl_incidencia.email=tbl_usuario.email ORDER BY fecha_inicio_incidencia DESC,hora_inicio_incidencia DESC");
                 $sinfiltro->execute();
                 $sinfiltrar=$sinfiltro->fetchAll(PDO::FETCH_ASSOC);               
                 if (empty($sinfiltrar)) {
