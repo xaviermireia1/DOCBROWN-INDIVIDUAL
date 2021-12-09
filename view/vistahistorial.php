@@ -68,9 +68,10 @@ if ($_SESSION['email']=="") {
             $mesa=$_POST['mesa'];
             /*$date=$_POST['date'];
             $date=date("d/m/Y",strtotime($date));*/
-            $filtro=$pdo->prepare("SELECT tbl_historial.id_historial,tbl_mesa.id_mesa,tbl_localizacion.nombre_localizacion,DATE_FORMAT(tbl_historial.dia_historial,'%d/%m/%Y') as 'fecha',tbl_historial.inicio_historial,tbl_historial.fin_historial,tbl_historial.nombre
+            $filtro=$pdo->prepare("SELECT tbl_historial.id_historial,tbl_mesa.id_mesa,tbl_localizacion.nombre_localizacion,DATE_FORMAT(tbl_historial.dia_historial,'%d/%m/%Y') as `fecha`,tbl_historial.inicio_historial,tbl_historial.fin_historial,tbl_historial.email,tbl_usuario.nombre
             FROM tbl_historial INNER JOIN tbl_mesa ON tbl_historial.id_mesa=tbl_mesa.id_mesa
             INNER JOIN tbl_localizacion ON tbl_mesa.id_localizacion=tbl_localizacion.id_localizacion 
+            INNER JOIN tbl_usuario ON tbl_historial.email=tbl_usuario.email
             WHERE tbl_localizacion.nombre_localizacion like '%{$localizacion}%' and tbl_mesa.id_mesa like '%{$mesa}' 
             ORDER BY `fecha` DESC,tbl_historial.inicio_historial DESC");
             $filtro->execute();
@@ -110,9 +111,10 @@ if ($_SESSION['email']=="") {
                 echo "</div>";
                }
         }else {
-            $historial=$pdo->prepare("SELECT tbl_historial.id_historial,tbl_mesa.id_mesa,tbl_localizacion.nombre_localizacion,DATE_FORMAT(tbl_historial.dia_historial,'%d/%m/%Y') as `fecha`,tbl_historial.inicio_historial,tbl_historial.fin_historial,tbl_historial.nombre
+            $historial=$pdo->prepare("SELECT tbl_historial.id_historial,tbl_mesa.id_mesa,tbl_localizacion.nombre_localizacion,DATE_FORMAT(tbl_historial.dia_historial,'%d/%m/%Y') as `fecha`,tbl_historial.inicio_historial,tbl_historial.fin_historial,tbl_historial.email,tbl_usuario.nombre
             FROM tbl_historial INNER JOIN tbl_mesa ON tbl_historial.id_mesa=tbl_mesa.id_mesa
             INNER JOIN tbl_localizacion ON tbl_mesa.id_localizacion=tbl_localizacion.id_localizacion
+            INNER JOIN tbl_usuario ON tbl_historial.email=tbl_usuario.email
             ORDER BY `fecha` DESC,tbl_historial.inicio_historial DESC");
             $historial->execute(); 
             echo  "<div class='row padding-top-less padding-lat'>";
