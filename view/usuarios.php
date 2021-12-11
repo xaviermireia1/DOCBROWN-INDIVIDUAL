@@ -65,12 +65,14 @@ if ($_SESSION['email']=="") {
                 echo  "<div>";
                 echo  "<table>";
                 echo  "<tr>";
+                echo  "<th class='blue'>Email</th>";
                 echo  "<th class='blue'>Nombre</th>";
                 echo  "<th class='blue'>Apellido</th>";
                 echo  "<th class='blue'>Tipo</th>";
                 echo  "</tr>";
                 foreach ($comprobacion as $row) {
                     echo "<tr>";
+                    echo "<td class='gris'>{$row['email']}</td>";
                     echo "<td class='gris'>{$row['nombre']}</td>";
                     echo "<td class='gris'>{$row['apellido']}</td>";
                     echo "<td class='gris'>{$row['tipo']}</td>";
