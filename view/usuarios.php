@@ -24,6 +24,8 @@ if ($_SESSION['email']=="") {
         </ul>
         <div class="row padding-top padding-lat">
             <div class="fondo">
+                <button type='submit'><a type='button' href='localizaciones.php'>Ver localizaciones</a></button>
+                <button type='submit'><a type='button' href='vista.administrador.php'>Ver mesas</a></button>
                 <button type="submit"><a type='button' href='formcrearuser.php'>Añadir usuario</a></button>
                 <form action="usuarios.php" method="post">
                     <div class="column-4">
