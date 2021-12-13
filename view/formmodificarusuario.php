@@ -49,7 +49,7 @@ foreach ($sentencia as $row) {
             </select>
              <br><br>
              <div class="column-1">
-                <input class="filtrar" type="submit" value="Modificar">
+                <input class="filtrar" type="submit" value="Modificar usuario">
             </div>
         </form>
     </div>

@@ -1,11 +1,9 @@
 <?php
 session_start();
 require_once '../services/connection.php';
-if ($_SESSION['email']==""){
+if ($_SESSION['email']=="" || $_SESSION['tipo_user']!='administrador'){
     header("location:login.html");
-}else {
-$id_mesa=$_GET["idmesa"];
-$id_localizacion=$_GET['idlocalizacion'];
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +12,7 @@ $id_localizacion=$_GET['idlocalizacion'];
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/styles.css">
-    <title>Añadir incidencia</title>
+    <title>Modificar localizacion</title>
 </head>
 <body>
     <!--Header-->
@@ -26,21 +24,17 @@ $id_localizacion=$_GET['idlocalizacion'];
     </ul>
     <div class="row padding-top padding-lat">
     <div class="fondo">        
-        <form action="../proceses/agregarincidencia.php" method="post">
-            <?php
-            echo "<h1>Añadir incidencia en el ID mesa: {$id_mesa}</h1>";
-            echo "<input type='hidden' name='idmesa' value={$id_mesa}>";
-            echo "<input type='hidden' name='idlocalizacion' value={$id_localizacion}>";
-            ?>
-             <textarea name="description" id="description" cols="50" rows="10"></textarea>
+        <form action="../proceses/crearlocalizacion.php" method="post" enctype="multipart/form-data">
+            <label>Nombre localizacion</label><br><br>
+            <input type="text" name="nombre" id="nombre">
+            <br><br><label>Imagen de la localizacion</label><br><br>
+            <input type="file" name="img" id="img">
              <br><br>
              <div class="column-1">
-                <input class="filtrar" type="submit" value="Enviar incidencia">
+                <input class="filtrar" type="submit" value="Crear localizacion">
             </div>
         </form>
     </div>
     </div>
 </body>
 </html>
-<?php
-}

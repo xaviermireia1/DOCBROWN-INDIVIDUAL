@@ -41,7 +41,7 @@ if ($_SESSION['email']=="" || $_SESSION['tipo_user']!='administrador'){
             <input type="password" name="contraseña" id="contraseña">
              <br><br>
              <div class="column-1">
-                <input class="filtrar" type="submit" value="Crear">
+                <input class="filtrar" type="submit" value="Crear usuario">
             </div>
         </form>
     </div>

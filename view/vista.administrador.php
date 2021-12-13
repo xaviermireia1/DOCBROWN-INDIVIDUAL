@@ -28,6 +28,7 @@ if ($_SESSION['email']=="" || $_SESSION['tipo_user']!='administrador') {
         <div class="row padding-top padding-lat">
             <div class="fondo">
                 <button type='submit'><a type='button' href='usuarios.php'>Ver usuarios</a></button>
+                <button type='submit'><a type='button' href='localizaciones.php'>Ver localizaciones</a></button>
                 <button type="submit"><a type='button' href='formcrearmesa.php'>Crear mesa</a></button>
                 <form action="vista.administrador.php" method="post">
                     <div class="column-1">
