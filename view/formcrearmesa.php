@@ -12,6 +12,8 @@ if ($_SESSION['email']=="" || $_SESSION['tipo_user']!='administrador'){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="../js/script.js"></script>
     <title>Añadir mesa</title>
 </head>
 <body>
@@ -24,7 +26,7 @@ if ($_SESSION['email']=="" || $_SESSION['tipo_user']!='administrador'){
     </ul>
     <div class="row padding-top padding-lat">
     <div class="fondo">        
-        <form action="../proceses/crearmesa.php" method="post">
+        <form action="../proceses/crearmesa.php" method="post" onsubmit="return validarmesa()">
             <label>Cantidad de mesas</label><br><br>
             <input type="number" name="mesa" id="mesa">
             <br><br><label>Cantidad de sillas</label><br><br>

@@ -23,6 +23,7 @@ if ($_SESSION['email']=="") {
         </ul>
         <div class="row padding-top padding-lat">
             <div class="fondo">
+            <button type="submit"><a type='button' href='vistareservasonline.php'>Ver reservas online</a></button>
             <button type="submit"><a type='button' href='zona.admin.php'>Ver mesas</a></button>
             <?php
                     if ($_SESSION['tipo_user']=='mantenimiento') {

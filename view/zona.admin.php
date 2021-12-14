@@ -32,6 +32,7 @@ if ($_SESSION['email']=="") {
         <div class="row padding-top padding-lat">
             <div class="fondo">
                 <button type="submit"><a type='button' href='vistahistorial.php'>Ver historial de reservas</a></button>
+                <button type="submit"><a type='button' href='vistareservasonline.php'>Ver reservas online</a></button>
                 <?php
                     if ($_SESSION['tipo_user']=='mantenimiento') {
                         echo "<button type='submit'><a type='button' href='vistaincidencia.php'>Ver incidencias</a></button>";
@@ -68,6 +69,7 @@ if ($_SESSION['email']=="") {
                             <option value="si">Si</option>
                             <option value="no">No</option>
                             <option value="mantenimiento">Mantenimiento</option>
+                            <option value="online">Online</option>
                         </select>
                     </div>
                     <div class="column-1">
@@ -141,7 +143,8 @@ if ($_SESSION['email']=="") {
                         case 'si':
                             echo "<td class='gris'><i class='fas fa-check green'></i></td>";
                             if ($_SESSION['tipo_user']=='camarero') {
-                                echo "<td><button type='submit'><a type='button' href='../proceses/agregareserva.php?idmesa={$row['id_mesa']}'>Añadir reserva</a></button></td>";
+                                echo "<td><button type='submit'><a type='button' href='../proceses/agregareserva.php?idmesa={$row['id_mesa']}'>Reservar ya</a></button></td>";
+                                echo "<td><button type='submit'><a type='button' href='../view/formagregarreservaonline.php?idmesa={$row['id_mesa']}'>Reservar online</a></button></td>";
                             }
                             echo "<td><button type='submit'><a type='button' href='formincidencia.php?idmesa={$row['id_mesa']}&idlocalizacion={$row['id_localizacion']}'>Añadir Incidencia</a></button></td>";
                             break;
@@ -158,6 +161,11 @@ if ($_SESSION['email']=="") {
                                 echo "<td><button type='submit'><a type='button' href='../proceses/eliminarincidencia.php?idmesa={$row['id_mesa']}'>Eliminar Incidencia</a></button></td>";
                             }
                             break;
+                        case 'online':
+                            if ($_SESSION['tipo_user']=='camarero') {
+                                echo "<td class='gris'><i class='fas fa-times red'></i></td>";
+                                echo "<td><button type='submit'><a type='button' href='../view/vistareservasonline>Ver Reserva Online</a></button></td>";
+                            }
                     }
             echo "</tr>";
         }

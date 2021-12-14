@@ -19,6 +19,8 @@ foreach ($localizacion as $row) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="../js/script.js"></script>
     <title>Modificar localizacion</title>
 </head>
 <body>
@@ -31,7 +33,7 @@ foreach ($localizacion as $row) {
     </ul>
     <div class="row padding-top padding-lat">
     <div class="fondo">        
-        <form action="../proceses/modificarlocalizacion.php" method="post" enctype="multipart/form-data">
+        <form action="../proceses/modificarlocalizacion.php" method="post" enctype="multipart/form-data" onsubmit="return validarlocalizacion()">
             <label>Nombre localizacion</label><br><br>
             <input type="text" name="nombre" id="nombre" value="<?php echo $nombrelocalizacion; ?>">
             <br><br><label>Imagen de la localizacion</label><br><br>
