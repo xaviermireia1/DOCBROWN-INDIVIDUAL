@@ -17,7 +17,7 @@ if (!empty($mesaonline)) {
     foreach ($mesaonline as $row) {
         $idmesa=$row['id_mesa'];
         $setmesaonline=$pdo->prepare("UPDATE tbl_mesa SET disponibilidad='online' WHERE id_mesa=$idmesa");
-        $setmesaonline->execute();
+        //$setmesaonline->execute();
     }
 }
     ?>
