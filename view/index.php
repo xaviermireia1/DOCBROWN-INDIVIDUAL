@@ -1,1 +1,1 @@
-Vista para cliente online
+Vista para cliente online de la pagina home

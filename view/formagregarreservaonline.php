@@ -33,7 +33,7 @@ require_once '../services/connection.php';
             <br><br><label>Email cliente</label><br><br>
             <input type="email" name="email" id="email">
             <br><br><label>Dia de reserva</label><br><br>
-            <input type="date" name="fecha" id="fecha">
+            <input type="date" name="fecha" id="fecha" min="<?php $fechasistema=date('Y-m-d'); echo $fechasistema ?>">
             <br><br><label>Hora de reserva</label><br><br>
             <input type="time" step="3600" name="hora" id="hora">
             <input type="hidden" name="idmesa" value="<?php echo $_GET['idmesa']; ?>">

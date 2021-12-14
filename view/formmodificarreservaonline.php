@@ -58,14 +58,14 @@ if (!empty($mesaonline)) {
             <br><br><label>¿Cuantas personas?</label><br><br>
             <input type="number" min="1" name="silla" id="silla" value="<?php echo $silla; ?>">
             <br><br><label>Dia de reserva</label><br><br>
-            <input type="date" name="fecha" id="fecha" value="<?php echo $fecha; ?>">
+            <input type="date" name="fecha" id="fecha" value="<?php echo $fecha; ?>" min="<?php echo $fechasistema ?>">
             <br><br><label>Hora de reserva</label><br><br>
             <input type="time" step="3600" name="hora" id="hora">
             <input type="hidden" name="email" id="email" value="<?php echo $email; ?>">
             <input type="hidden" name="idhistorial" id="idhistorial" value="<?php echo $_GET['id']; ?>">
              <br><br>
              <div class="column-1">
-                <input class="filtrar" type="submit" value="Crear reserva Online">
+                <input class="filtrar" type="submit" value="Modificar reserva Online">
             </div>
         </form>
     </div>
