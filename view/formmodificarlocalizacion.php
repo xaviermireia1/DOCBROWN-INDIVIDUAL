@@ -11,6 +11,18 @@ $localizacion=$localizaciones->fetchAll(PDO::FETCH_ASSOC);
 foreach ($localizacion as $row) {
     $nombrelocalizacion=$row['nombre_localizacion'];
 }
+$fechasistema=date('Y-m-d');
+$horasistema=date('H:i');
+$mesaonline=$pdo->prepare("SELECT * FROM tbl_historialonline WHERE fecha='{$fechasistema}' AND hora<='{$horasistema}'");
+$mesaonline->execute();
+$mesaonline=$mesaonline->fetchAll(PDO::FETCH_ASSOC);
+if (!empty($mesaonline)) {
+    foreach ($mesaonline as $row) {
+        $idmesa=$row['id_mesa'];
+        $setmesaonline=$pdo->prepare("UPDATE tbl_mesa SET disponibilidad='online' WHERE id_mesa=$idmesa");
+        $setmesaonline->execute();
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
