@@ -29,7 +29,7 @@ if ($_SESSION['email']=="" || $_SESSION['tipo_user']!='administrador') {
             <div class="fondo">
                 <button type='submit'><a type='button' href='usuarios.php'>Ver usuarios</a></button>
                 <button type='submit'><a type='button' href='vista.administrador.php'>Ver mesas</a></button>
-                <button type="submit"><a type='button' href='formcrearlocalizacion.php'>Crear localziacion</a></button>
+                <button type="submit"><a type='button' href='formcrearlocalizacion.php'>Crear localizacion</a></button>
                 <form action="localizaciones.php" method="post">
                     <div class="column-1">
                         <br><label for="mesa">Localizacion</label><br>

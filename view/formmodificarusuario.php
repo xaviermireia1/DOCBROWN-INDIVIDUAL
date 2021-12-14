@@ -20,6 +20,8 @@ foreach ($sentencia as $row) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="../js/script.js"></script>
     <title>Añadir incidencia</title>
 </head>
 <body>
@@ -32,14 +34,14 @@ foreach ($sentencia as $row) {
     </ul>
     <div class="row padding-top padding-lat">
     <div class="fondo">        
-        <form action="../proceses/modificarusuario.php" method="post">
+        <form action="../proceses/modificarusuario.php" method="post" onsubmit="return validarmoduser();">
             <?php
             echo "<h1>Modificar usuario: {$nombre}</h1>";
             echo "<input type='hidden' name='email' value={$email}>";
             echo "<br><label>Nombre</label><br><br>";
-            echo "<input type='text' name='nombre' value={$nombre}>";
+            echo "<input type='text' name='nombre' id='nombre' value={$nombre}>";
             echo "<br><br><label>Apellido</label><br><br>";
-            echo "<input type='text' name='apellido' value={$apellido}>";
+            echo "<input type='text' name='apellido' id='apellido' value={$apellido}>";
             echo "<br><br><label>Tipo</label><br><br>";
             ?>
             <select name="option" id="option">

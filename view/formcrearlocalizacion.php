@@ -12,6 +12,8 @@ if ($_SESSION['email']=="" || $_SESSION['tipo_user']!='administrador'){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="../js/script.js"></script>
     <title>Modificar localizacion</title>
 </head>
 <body>
@@ -24,7 +26,7 @@ if ($_SESSION['email']=="" || $_SESSION['tipo_user']!='administrador'){
     </ul>
     <div class="row padding-top padding-lat">
     <div class="fondo">        
-        <form action="../proceses/crearlocalizacion.php" method="post" enctype="multipart/form-data">
+        <form action="../proceses/crearlocalizacion.php" method="post" enctype="multipart/form-data" onsubmit="return validarlocalizacion()">
             <label>Nombre localizacion</label><br><br>
             <input type="text" name="nombre" id="nombre">
             <br><br><label>Imagen de la localizacion</label><br><br>
