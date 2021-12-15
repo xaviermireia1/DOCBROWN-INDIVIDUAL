@@ -43,8 +43,14 @@ if (!empty($reservaocupada)) {
         }
 }else{
     if (empty($_SESSION['nombre'])) {
-        exit(header('location:../view/index.php'));
+        exit("<script>
+                    alert('No hay ninguna mesa disponible durante esa fecha y hora')
+                    location.href='../view/index.php';
+               </script>");
     }else{
-        exit(header('location:../view/zona.admin.php'));
+        exit("<script>
+                    alert('No hay ninguna mesa disponible durante esa fecha y hora')
+                    location.href='../view/zona.admin.php';
+               </script>");
     } 
 }

@@ -91,7 +91,7 @@ if ($_SESSION['email']=="") {
                     echo "<td class='gris'>{$row['apellido']}</td>";
                     echo "<td class='gris'>{$row['tipo']}</td>";
                     echo "<td><button type='submit'><a type='button' href='../view/formmodificarusuario.php?email={$row['email']}'>Modificar usuario</a></button></td>";
-                    echo "<td><button type='submit'><a type='button' href='../proceses/eliminarusuario.php?email={$row['email']}'>Eliminar usuario</a></button></td>";
+                    echo "<td><button class='buttononline' type='submit'><a type='button' href='../proceses/eliminarusuario.php?email={$row['email']}'>Eliminar usuario</a></button></td>";
                     echo "<tr>";
                 }
                 echo  "</div>";

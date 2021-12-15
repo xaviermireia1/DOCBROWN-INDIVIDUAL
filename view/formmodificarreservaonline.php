@@ -51,19 +51,18 @@ if (!empty($mesaonline)) {
     <div class="row padding-top padding-lat">
     <div class="fondo">        
         <form action="../proceses/modificarreservaonline.php" method="post" onsubmit="return validarmodreservaonline()">
-            <label>Nombre cliente</label><br><br>
-            <input type="text" name="nombre" id="nombre" value="<?php echo $nombre; ?>">
-            <br><br><label>Apellido cliente</label><br><br>
-            <input type="text" name="apellido" id="apellido" value="<?php echo $apellido; ?>">
-            <br><br><label>¿Cuantas personas?</label><br><br>
-            <input type="number" min="1" name="silla" id="silla" value="<?php echo $silla; ?>">
-            <br><br><label>Dia de reserva</label><br><br>
-            <input type="date" name="fecha" id="fecha" value="<?php echo $fecha; ?>" min="<?php echo $fechasistema ?>">
-            <br><br><label>Hora de reserva</label><br><br>
-            <input type="time" step="3600" name="hora" id="hora">
+            <label>Nombre cliente</label>
+            <input class="casilla" type="text" name="nombre" id="nombre" value="<?php echo $nombre; ?>">
+            <label>Apellido cliente</label>
+            <input class="casilla" type="text" name="apellido" id="apellido" value="<?php echo $apellido; ?>">
+            <label>¿Cuantas personas?</label>
+            <input class="casilla" type="number" min="1" name="silla" id="silla" value="<?php echo $silla; ?>">
+            <label>Dia de reserva</label>
+            <input class="casilla" type="date" name="fecha" id="fecha" value="<?php echo $fecha; ?>" min="<?php echo $fechasistema ?>">
+            <label>Hora de reserva</label>
+            <input class="casilla" type="time" step="3600" name="hora" id="hora">
             <input type="hidden" name="email" id="email" value="<?php echo $email; ?>">
             <input type="hidden" name="idhistorial" id="idhistorial" value="<?php echo $_GET['id']; ?>">
-             <br><br>
              <div class="column-1">
                 <input class="filtrar" type="submit" value="Modificar reserva Online">
             </div>

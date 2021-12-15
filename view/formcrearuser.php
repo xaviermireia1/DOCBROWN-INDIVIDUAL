@@ -39,21 +39,21 @@ if (!empty($mesaonline)) {
     <div class="row padding-top padding-lat">
     <div class="fondo">        
         <form action="../proceses/crearusuario.php" method="post" onsubmit="return validaruser();">
-            <label>Email</label><br><br>
-            <input type="email" name="email" id="email">
-            <br><br><label>Nombre</label><br><br>
-            <input type="text" name="nombre" id="nombre">
-            <br><br><label>Apellido</label><br><br>
-            <input type="text" name="apellido" id="apellido">
-            <br><br><label>Tipo usuario</label><br><br>
-            <select name="option" id="option">
+            <label>Email</label>
+            <input class="casilla" type="email" name="email" id="email">
+            <label>Nombre</label>
+            <input class="casilla" type="text" name="nombre" id="nombre">
+            <label>Apellido</label>
+            <input class="casilla" type="text" name="apellido" id="apellido">
+            <br><label>Tipo usuario</label>
+            <select class="casilla" name="option" id="option">
                 <option value="mantenimiento">Mantenimiento</option>
                 <option value="administrador">Administrador</option>
                 <option value="camarero">Camarero</option>
             </select>
-            <br><br><label>Contraseña</label><br><br>
-            <input type="password" name="contraseña" id="contraseña">
-             <br><br>
+            <label>Contraseña</label>
+            <input class="casilla" type="password" name="contraseña" id="contraseña">
+             
              <div class="column-1">
                 <input class="filtrar" type="submit" value="Crear usuario">
             </div>

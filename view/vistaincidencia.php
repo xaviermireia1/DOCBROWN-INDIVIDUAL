@@ -40,10 +40,10 @@ if (($_SESSION['email']=="") || ($_SESSION["tipo_user"]!="mantenimiento")) {
             <form action="vistaincidencia.php" method="post">
                 <div class="column-4"><br>
                     <label for="name">¿Quien hizo la incidencia?</label>
-                    <input type="text" name="nombre" id="nombre">
+                    <input type="text" name="nombre" id="nombre" class="casilla">
                 </div>
                     <div class="column-1">
-                        <br><br><input class="filtrar" type="submit" value="FILTRAR" name="filtrar">
+                        <input class="filtrar" type="submit" value="FILTRAR" name="filtrar">
                     </div>
             </form>
             </div>

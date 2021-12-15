@@ -48,14 +48,15 @@ if (!empty($mesaonline)) {
     <div class="row padding-top padding-lat">
     <div class="fondo">        
         <form action="../proceses/modificarmesa.php" method="post" onsubmit="return validarmesa()">
-            <label>Cantidad de mesas</label><br><br>
-            <input type="number" name="mesa" id="mesa" value="<?php echo $cantmesa; ?>">
-            <br><br><label>Cantidad de sillas</label><br><br>
-            <input type="number" name="silla" id="silla" value="<?php echo $cantsillas; ?>">
+        <h1>Modificando la mesa: <?php echo $idmesa; ?></h1>
+            <label>Cantidad de mesas</label>
+            <input class="casilla" type="number" name="mesa" id="mesa" value="<?php echo $cantmesa; ?>">
+            <label>Cantidad de sillas</label>
+            <input class="casilla" type="number" name="silla" id="silla" value="<?php echo $cantsillas; ?>">
             <input type="hidden" name="disponibilidad" value="<?php echo $disponibilidad; ?>">
             <input type="hidden" name="idmesa" value="<?php echo $idmesa; ?>">
-            <br><br><label>Ubicacion</label><br><br>
-            <select name="localizacion" class="casilla">
+            <br><label>Ubicacion</label>
+            <select class="casilla" name="localizacion" class="casilla">
                 <?php
                 // Mostrar todas las localizaciones que existen
                     $option=$pdo->prepare("SELECT * FROM tbl_localizacion");
@@ -66,7 +67,6 @@ if (!empty($mesaonline)) {
                     }
                 ?>
             </select>
-             <br><br>
              <div class="column-1">
                 <input class="filtrar" type="submit" value="Modificar mesa">
             </div>

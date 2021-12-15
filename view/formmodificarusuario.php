@@ -50,13 +50,13 @@ if (!empty($mesaonline)) {
             <?php
             echo "<h1>Modificar usuario: {$nombre}</h1>";
             echo "<input type='hidden' name='email' value={$email}>";
-            echo "<br><label>Nombre</label><br><br>";
-            echo "<input type='text' name='nombre' id='nombre' value={$nombre}>";
-            echo "<br><br><label>Apellido</label><br><br>";
-            echo "<input type='text' name='apellido' id='apellido' value={$apellido}>";
-            echo "<br><br><label>Tipo</label><br><br>";
+            echo "<label>Nombre: </label>";
+            echo "<input class='casilla' type='text' name='nombre' id='nombre' value={$nombre}>";
+            echo "<label>Apellido: </label>";
+            echo "<input class='casilla' type='text' name='apellido' id='apellido' value={$apellido}>";
+            echo "<label>Tipo: </label>";
             ?>
-            <select name="option" id="option">
+            <select class="casilla" name="option" id="option">
                 <option value="mantenimiento">Mantenimiento</option>
                 <option value="administrador">Administrador</option>
                 <option value="camarero">Camarero</option>

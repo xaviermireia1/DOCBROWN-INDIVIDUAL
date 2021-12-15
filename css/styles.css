@@ -155,10 +155,12 @@ li a:hover:not(.active) {
 
 .casilla {
     border-radius: 5px;
+    width: 250px;
     padding: 1%;
     padding-left: 5%;
     padding-right: 5%;
     margin: 5%;
+    outline: none;
 }
 
 table {
@@ -211,22 +213,41 @@ label {
 }
 
 .filtrar {
-    font-size: 18px;
-    font-weight: bold;
-    padding-right: 1%;
-    padding-left: 1%;
-    color: royalblue;
+    padding: 0 16px;
     border-radius: 5px;
+    background-color: white;
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    transition: background-color 15ms linear, box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+    height: 36px;
+    line-height: 2.25rem;
+    font-size: 0.875rem;
+    font-weight: bold;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
 }
 
 .filtrar:hover {
-    background-color: #cccccc;
+    background-color: rgb(95, 172, 235);
 }
 
 button {
     padding: 0 16px;
     border-radius: 5px;
-    background-color: #fafafa;
+    background-color: white;
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    transition: background-color 15ms linear, box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+    height: 36px;
+    line-height: 2.25rem;
+    font-size: 0.875rem;
+    font-weight: bold;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.buttononline {
+    padding: 0 16px;
+    border-radius: 5px;
+    background-color: white;
     box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
     transition: background-color 15ms linear, box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
     height: 36px;
@@ -239,17 +260,31 @@ button {
 
 button a {
     text-decoration: none;
+    color: black;
 }
 
 button:hover,
 button:focus {
     box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
-    background-color: #d4d4d4;
+    background-color: rgb(95, 172, 235);
+    text-decoration: none;
 }
 
 button:active {
     box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
-    background-color: #cccccc;
+    background-color: rgb(95, 172, 235);
+    text-decoration: none;
+}
+
+.buttononline:hover,
+.buttononline:focus {
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
+    background-color: red;
+}
+
+.buttononline:active {
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+    background-color: red;
 }
 
 

@@ -43,12 +43,11 @@ if (!empty($mesaonline)) {
                 <button type='submit'><a type='button' href='vista.administrador.php'>Ver mesas</a></button>
                 <button type="submit"><a type='button' href='formcrearlocalizacion.php'>Crear localizacion</a></button>
                 <form action="localizaciones.php" method="post">
-                    <div class="column-1">
-                        <br><label for="mesa">Localizacion</label><br>
+                    <div class="column-2">
+                        <label for="mesa">Localizacion</label>
                         <input type="text" placeholder="Introduce la localizacion.." name="localizacion" class="casilla">
                     </div>
                     <div class="column-1">
-                        <br>
                         <input type="submit" value="FILTRAR" name="filtrar" class="filtrar">
                     </div>
                 </form>
@@ -105,7 +104,7 @@ if (!empty($mesaonline)) {
                         echo "<td class='gris'>{$row['nombre_localizacion']}</td>";
                         echo "<td class='gris'><img src='{$row['img']}'></td>";
                         echo "<td><button type='submit'><a type='button' href='../view/formmodificarlocalizacion.php?id={$row['id_localizacion']}'>Modificar localizacion</a></button></td>";
-                        echo "<td><button type='submit'><a type='button' href='../proceses/eliminarlocalizacion.php?id={$row['id_localizacion']}'>Eliminar localizacion</a></button></td>";
+                        echo "<td><button class='buttononline' type='submit'><a type='button' href='../proceses/eliminarlocalizacion.php?id={$row['id_localizacion']}'>Eliminar localizacion</a></button></td>";
                     echo "</tr>";
                 }
        ?>
