@@ -24,9 +24,9 @@ $reservaocupada->execute();
 $reservaocupada=$reservaocupada->fetchAll(PDO::FETCH_ASSOC);
 if (!empty($reservaocupada)) {
     if (empty($_SESSION['nombre'])) {
-        exit(header('location:../view/index.php'));
+        exit(header('location:../view/reservasonlinecliente.php?error=1'));
     }else{
-        exit(header('location:../view/zona.admin.php'));
+        exit(header('location:../view/zona.admin.php?error=1'));
     }
 }else{
     if (empty($emailexiste)) {
@@ -41,8 +41,8 @@ if (!empty($reservaocupada)) {
     $insertarreservaonline=$pdo->prepare("INSERT INTO tbl_historialonline (email,nombre,apellido,fecha,hora,id_mesa) VALUES ('{$email}','{$nombre}','{$apellido}','{$fecha}','$hora',$idmesa)");
     $insertarreservaonline->execute();
     if (empty($_SESSION['nombre'])) {
-        header('location:../view/reservasonlineclient.php');
+        header('location:../view/reservasonlinecliente.php?error=2');
     }else{
-        header('location:../view/zona.admin.php');
+        header('location:../view/zona.admin.php?error=2');
     }
 }

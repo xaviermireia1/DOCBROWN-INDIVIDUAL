@@ -34,9 +34,9 @@ require_once '../services/connection.php';
             <br><label>Email cliente</label>
             <input class="casilla" type="email" name="email" id="email">
             <label>Dia de reserva</label>
-            <input class="casilla" type="date" name="fecha" id="fecha" min="<?php $fechasistema=date('Y-m-d'); echo $fechasistema ?>">
+            <input class="casilla" type="date" name="fecha" id="fecha">
             <br><label>Hora de reserva</label>
-            <input class="casilla" type="time" step="3600" name="hora" id="hora">
+            <input class="casilla" type="time" min="08:00" max="23:00" step="3600" name="hora" id="hora">
             <input type="hidden" name="idmesa" value="<?php echo $_GET['idmesa']; ?>">            
              <div class="column-1">
                 <input class="filtrar" type="submit" value="Crear reserva Online">
