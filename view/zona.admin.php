@@ -28,6 +28,7 @@ if (!empty($mesaonline)) {
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="../css/styles.css">
+        <link rel="shortcut icon" type="image/png" href="../img/logo.png" />
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
         <title>Intranet</title>
     </head>
@@ -163,7 +164,9 @@ if (!empty($mesaonline)) {
                         
                         case 'no':
                             echo "<td class='gris'><i class='fas fa-times red'></i> <i class='fas fa-map-marker-alt red'></i></td>";
-                            echo "<td><button type='submit' class='buttononline'><a type='button' href='../proceses/eliminareserva.php?idmesa={$row['id_mesa']}'>Quitar reserva</a></button></td>";
+                            if ($_SESSION['tipo_user']=='camarero') {
+                                echo "<td><button type='submit' class='buttononline'><a type='button' href='../proceses/eliminareserva.php?idmesa={$row['id_mesa']}'>Acabar reserva</a></button></td>";
+                            }
                             break;
                         case 'mantenimiento':
                             if ($_SESSION['tipo_user']=='camarero') {
