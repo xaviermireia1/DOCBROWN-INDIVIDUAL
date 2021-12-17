@@ -24,6 +24,7 @@ if (!empty($mesaonline)) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="shortcut icon" type="image/png" href="../img/logo.png" />
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="../js/script.js"></script>
     <title>Añadir mesa</title>
@@ -39,11 +40,11 @@ if (!empty($mesaonline)) {
     <div class="row padding-top padding-lat">
     <div class="fondo">        
         <form action="../proceses/crearmesa.php" method="post" onsubmit="return validarmesa()">
-            <label>Cantidad de mesas</label><br><br>
-            <input type="number" name="mesa" id="mesa">
-            <br><br><label>Cantidad de sillas</label><br><br>
-            <input type="number" name="silla" id="silla">
-            <br><br><label>Ubicacion</label><br><br>
+            <label>Cantidad de mesas</label>
+            <input class="casilla" type="number" name="mesa" id="mesa">
+            <label>Cantidad de sillas</label>
+            <input class="casilla" type="number" name="silla" id="silla">
+            <br><label>Ubicacion</label>
             <select name="localizacion" class="casilla">
                 <?php
                 // Mostrar todas las localizaciones que existen
@@ -55,7 +56,7 @@ if (!empty($mesaonline)) {
                     }
                 ?>
             </select>
-             <br><br>
+             
              <div class="column-1">
                 <input class="filtrar" type="submit" value="Crear mesa">
             </div>

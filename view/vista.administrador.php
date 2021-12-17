@@ -24,6 +24,7 @@ if (!empty($mesaonline)) {
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="../css/styles.css">
+        <link rel="shortcut icon" type="image/png" href="../img/logo.png" />
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
         <title>Administrador</title>
     </head>
@@ -43,12 +44,11 @@ if (!empty($mesaonline)) {
                 <button type='submit'><a type='button' href='localizaciones.php'>Ver localizaciones</a></button>
                 <button type="submit"><a type='button' href='formcrearmesa.php'>Crear mesa</a></button>
                 <form action="vista.administrador.php" method="post">
-                    <div class="column-1">
-                        <br><label for="mesa">Numero de Mesa</label><br>
+                    <div class="column-2">
+                        <label for="mesa">Numero de Mesa</label>
                         <input type="number" min='1' placeholder="Introduce el numero de mesa..." name="mesa" class="casilla">
                     </div>
                     <div class="column-1">
-                        <br>
                         <input type="submit" value="FILTRAR" name="filtrar" class="filtrar">
                     </div>
                 </form>
@@ -123,7 +123,7 @@ if (!empty($mesaonline)) {
                         case 'si':
                             echo "<td class='gris'><i class='fas fa-check green'></i></td>";
                             echo "<td><button type='submit'><a type='button' href='../view/formmodificarmesa.php?idmesa={$row['id_mesa']}&disponibilidad={$row['disponibilidad']}'>Modificar mesa</a></button></td>";
-                            echo "<td><button type='submit'><a type='button' href='../proceses/eliminarmesa.php?idmesa={$row['id_mesa']}'>Eliminar mesa</a></button></td>";
+                            echo "<td><button class='buttononline' type='submit'><a type='button' href='../proceses/eliminarmesa.php?idmesa={$row['id_mesa']}'>Eliminar mesa</a></button></td>";
                             break;                       
                         case 'no':
                             echo "<td class='gris'><i class='fas fa-times red'></i></td>";
@@ -132,7 +132,7 @@ if (!empty($mesaonline)) {
                         case 'mantenimiento':
                             echo "<td class='gris'><i class='fas fa-briefcase brown'></i></td>";
                             echo "<td><button type='submit'><a type='button' href='../view/formmodificarmesa.php?idmesa={$row['id_mesa']}&disponibilidad={$row['disponibilidad']}'>Modificar mesa</a></button></td>";
-                            echo "<td><button type='submit'><a type='button' href='../proceses/eliminarmesa.php?idmesa={$row['id_mesa']}'>Eliminar mesa</a></button></td>";
+                            echo "<td><button class='buttononline' type='submit'><a type='button' href='../proceses/eliminarmesa.php?idmesa={$row['id_mesa']}'>Eliminar mesa</a></button></td>";
                             break;
                     }
             echo "</tr>";

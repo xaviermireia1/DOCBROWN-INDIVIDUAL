@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-12-2021 a las 16:40:12
+-- Tiempo de generación: 17-12-2021 a las 17:43:28
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 7.4.24
 
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `2122_gomezgallegoxavier`
 --
-CREATE DATABASE IF NOT EXISTS `2122_gomezgallegoxavier` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `2122_gomezgallegoxavier`;
 
 -- --------------------------------------------------------
 
@@ -63,7 +61,40 @@ INSERT INTO `tbl_historial` (`id_historial`, `id_mesa`, `dia_historial`, `inicio
 (34, 13, '2021-11-10', '18:59:01', '18:59:31', 'xaviergomez@docbrown.com'),
 (35, 1, '2021-12-11', '13:12:21', '13:12:27', 'xaviergomez@docbrown.com'),
 (36, 1, '2021-12-11', '16:10:42', '16:10:44', 'xaviergomez@docbrown.com'),
-(37, 1, '2021-12-11', '16:21:49', '16:21:50', 'xaviergomez@docbrown.com');
+(37, 1, '2021-12-11', '16:21:49', '16:21:50', 'xaviergomez@docbrown.com'),
+(39, 1, '2021-12-14', '20:17:25', '20:18:07', 'xaviergomez@docbrown.com'),
+(40, 2, '2021-12-14', '22:47:23', '22:47:24', 'xaviergomez@docbrown.com'),
+(41, 2, '2021-12-14', '22:52:36', '22:52:38', 'xaviergomez@docbrown.com'),
+(42, 1, '2021-12-15', '17:11:42', '17:11:42', 'xaviergomez@docbrown.com'),
+(43, 1, '2021-12-15', '17:11:44', '17:11:44', 'xaviergomez@docbrown.com'),
+(44, 1, '2021-12-15', '17:11:45', '17:11:46', 'xaviergomez@docbrown.com'),
+(45, 1, '2021-12-15', '17:11:47', '17:11:48', 'xaviergomez@docbrown.com'),
+(46, 1, '2021-12-15', '17:11:49', '17:11:50', 'xaviergomez@docbrown.com'),
+(47, 1, '2021-12-15', '17:11:51', '17:11:52', 'xaviergomez@docbrown.com'),
+(48, 1, '2021-12-15', '17:11:53', '17:11:54', 'xaviergomez@docbrown.com'),
+(49, 1, '2021-12-15', '17:11:54', '17:11:55', 'xaviergomez@docbrown.com'),
+(50, 1, '2021-12-15', '17:12:09', '17:12:10', 'xaviergomez@docbrown.com'),
+(51, 1, '2021-12-15', '17:13:57', '17:13:57', 'xaviergomez@docbrown.com'),
+(52, 1, '2021-12-15', '17:14:52', '17:14:53', 'xaviergomez@docbrown.com'),
+(53, 1, '2021-12-15', '17:16:52', '17:16:52', 'xaviergomez@docbrown.com'),
+(54, 1, '2021-12-15', '17:21:52', '17:21:55', 'xaviergomez@docbrown.com'),
+(55, 1, '2021-12-15', '17:22:45', '17:22:59', 'xaviergomez@docbrown.com'),
+(56, 1, '2021-12-15', '17:23:00', '17:23:01', 'xaviergomez@docbrown.com'),
+(57, 1, '2021-12-15', '17:23:02', '17:23:02', 'xaviergomez@docbrown.com'),
+(58, 1, '2021-12-15', '17:23:05', '17:23:06', 'xaviergomez@docbrown.com'),
+(59, 1, '2021-12-15', '17:23:29', '17:23:29', 'xaviergomez@docbrown.com'),
+(60, 1, '2021-12-15', '17:33:40', '17:33:41', 'xaviergomez@docbrown.com'),
+(61, 1, '2021-12-15', '17:33:41', '17:33:43', 'xaviergomez@docbrown.com'),
+(62, 1, '2021-12-15', '17:36:45', '17:36:46', 'xaviergomez@docbrown.com'),
+(63, 1, '2021-12-15', '17:51:48', '17:51:51', 'xaviergomez@docbrown.com'),
+(64, 1, '2021-12-15', '17:51:51', '17:51:52', 'xaviergomez@docbrown.com'),
+(65, 1, '2021-12-15', '17:51:52', '17:51:53', 'xaviergomez@docbrown.com'),
+(66, 1, '2021-12-15', '17:52:12', '17:52:14', 'xaviergomez@docbrown.com'),
+(67, 1, '2021-12-15', '17:52:18', '17:52:18', 'xaviergomez@docbrown.com'),
+(68, 3, '2021-12-16', '17:52:22', '17:52:32', 'xaviergomez@docbrown.com'),
+(69, 2, '2021-12-16', '17:54:10', '17:57:19', 'xaviergomez@docbrown.com'),
+(70, 1, '2021-12-16', '18:02:46', '18:02:50', 'xaviergomez@docbrown.com'),
+(71, 4, '2021-12-17', '17:27:16', '17:30:19', 'xaviergomez@docbrown.com');
 
 -- --------------------------------------------------------
 
@@ -73,6 +104,7 @@ INSERT INTO `tbl_historial` (`id_historial`, `id_mesa`, `dia_historial`, `inicio
 
 CREATE TABLE `tbl_historialonline` (
   `id_historialonline` int(11) NOT NULL,
+  `email` varchar(250) DEFAULT NULL,
   `nombre` varchar(45) DEFAULT NULL,
   `apellido` varchar(45) DEFAULT NULL,
   `fecha` date DEFAULT NULL,
@@ -142,7 +174,7 @@ CREATE TABLE `tbl_mesa` (
   `id_mesa` int(11) NOT NULL,
   `mesa` int(11) DEFAULT NULL,
   `silla` int(11) DEFAULT NULL,
-  `disponibilidad` enum('si','no','mantenimiento') DEFAULT NULL,
+  `disponibilidad` enum('si','no','online','mantenimiento') DEFAULT NULL,
   `id_localizacion` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -262,13 +294,13 @@ ALTER TABLE `tbl_usuario`
 -- AUTO_INCREMENT de la tabla `tbl_historial`
 --
 ALTER TABLE `tbl_historial`
-  MODIFY `id_historial` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id_historial` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
 -- AUTO_INCREMENT de la tabla `tbl_historialonline`
 --
 ALTER TABLE `tbl_historialonline`
-  MODIFY `id_historialonline` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_historialonline` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de la tabla `tbl_incidencia`
@@ -280,13 +312,13 @@ ALTER TABLE `tbl_incidencia`
 -- AUTO_INCREMENT de la tabla `tbl_localizacion`
 --
 ALTER TABLE `tbl_localizacion`
-  MODIFY `id_localizacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_localizacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `tbl_mesa`
 --
 ALTER TABLE `tbl_mesa`
-  MODIFY `id_mesa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
+  MODIFY `id_mesa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=114;
 
 --
 -- Restricciones para tablas volcadas

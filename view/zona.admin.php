@@ -17,7 +17,7 @@ if (!empty($mesaonline)) {
     foreach ($mesaonline as $row) {
         $idmesa=$row['id_mesa'];
         $setmesaonline=$pdo->prepare("UPDATE tbl_mesa SET disponibilidad='online' WHERE id_mesa=$idmesa");
-        $setmesaonline->execute();
+        //$setmesaonline->execute();
     }
 }
     ?>
@@ -28,6 +28,7 @@ if (!empty($mesaonline)) {
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="../css/styles.css">
+        <link rel="shortcut icon" type="image/png" href="../img/logo.png" />
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
         <title>Intranet</title>
     </head>
@@ -68,11 +69,11 @@ if (!empty($mesaonline)) {
                     </div>
                     <div class="column-2">
                         <label for="mesa">Mesas</label><br>
-                        <input type="number" placeholder="Introduce cantidad mesas..." name="mesa" class="casilla">
+                        <input type="number" min="1" placeholder="Introduce cantidad mesas..." name="mesa" class="casilla">
                     </div>
                     <div class="column-2">
                         <label for="silla">Personas</label><br>
-                        <input type="number" placeholder="Introduce cantidad de personas..." name="silla" class="casilla">
+                        <input type="number" min="1" placeholder="Introduce cantidad de personas..." name="silla" class="casilla">
                     </div>
                     <div class="column-2">
                     <label for="disponibilidad">¿Mesa disponible?</label><br>
@@ -85,7 +86,7 @@ if (!empty($mesaonline)) {
                         </select>
                     </div>
                     <div class="column-1">
-                        <input type="submit" value="FILTRAR" name="filtrar" class="filtrar">
+                        <button type="submit" value="FILTRAR" name="filtrar" class="filtrar">Filtrar</button>
                     </div>
                 </form>
             </div>
@@ -163,14 +164,16 @@ if (!empty($mesaonline)) {
                         
                         case 'no':
                             echo "<td class='gris'><i class='fas fa-times red'></i> <i class='fas fa-map-marker-alt red'></i></td>";
-                            echo "<td><button type='submit'><a type='button' href='../proceses/eliminareserva.php?idmesa={$row['id_mesa']}'>Quitar reserva</a></button></td>";
+                            if ($_SESSION['tipo_user']=='camarero') {
+                                echo "<td><button type='submit' class='buttononline'><a type='button' href='../proceses/eliminareserva.php?idmesa={$row['id_mesa']}'>Acabar reserva</a></button></td>";
+                            }
                             break;
                         case 'mantenimiento':
                             if ($_SESSION['tipo_user']=='camarero') {
                                 echo "<td class='gris'><i class='fas fa-briefcase brown'></i></td>";
                             }else{
                                 echo "<td class='gris'><i class='fas fa-briefcase brown'></i></td>";
-                                echo "<td><button type='submit'><a type='button' href='../proceses/eliminarincidencia.php?idmesa={$row['id_mesa']}'>Eliminar Incidencia</a></button></td>";
+                                echo "<td><button type='submit' class='buttononline'><a type='button' href='../proceses/eliminarincidencia.php?idmesa={$row['id_mesa']}'>Eliminar Incidencia</a></button></td>";
                             }
                             break;
                         case 'online':

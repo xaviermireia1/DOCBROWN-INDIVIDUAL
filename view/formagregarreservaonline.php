@@ -12,6 +12,7 @@ require_once '../services/connection.php';
     <link rel="stylesheet" type="text/css" href="../css/styles.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="shortcut icon" type="image/png" href="../img/logo.png" />
     <script src="../js/script.js"></script>
 </head>
 <body>
@@ -26,18 +27,17 @@ require_once '../services/connection.php';
     <div class="row padding-top padding-lat">
     <div class="fondo">        
         <form action="../proceses/crearreservaonline.php" method="post" onsubmit="return validarreservaonline()">
-            <label>Nombre cliente</label><br><br>
-            <input type="text" name="nombre" id="nombre">
-            <br><br><label>Apellido cliente</label><br><br>
-            <input type="text" name="apellido" id="apellido">
-            <br><br><label>Email cliente</label><br><br>
-            <input type="email" name="email" id="email">
-            <br><br><label>Dia de reserva</label><br><br>
-            <input type="date" name="fecha" id="fecha">
-            <br><br><label>Hora de reserva</label><br><br>
-            <input type="time" step="3600" name="hora" id="hora">
-            <input type="hidden" name="idmesa" value="<?php echo $_GET['idmesa']; ?>">
-             <br><br>
+            <label>Nombre cliente</label>
+            <input class="casilla" type="text" name="nombre" id="nombre">
+            <label>Apellido cliente</label>
+            <input class="casilla" type="text" name="apellido" id="apellido">
+            <br><label>Email cliente</label>
+            <input class="casilla" type="email" name="email" id="email">
+            <label>Dia de reserva</label>
+            <input class="casilla" type="date" name="fecha" id="fecha" min="<?php $fechasistema=date('Y-m-d'); echo $fechasistema ?>">
+            <br><label>Hora de reserva</label>
+            <input class="casilla" type="time" step="3600" name="hora" id="hora">
+            <input type="hidden" name="idmesa" value="<?php echo $_GET['idmesa']; ?>">            
              <div class="column-1">
                 <input class="filtrar" type="submit" value="Crear reserva Online">
             </div>

@@ -1,10 +1,8 @@
 <?php
 require_once '../services/connection.php';
 session_start();
-if (empty($_POST['idmesa']) && empty($_SESSION['nombre'])) {
+if (empty($_POST['idmesa'])) {
     header("location:../view/index.php");
-}elseif (empty($_POST['idmesa'])) {
-    header("location:../view/zona.admin.php");
 }
 $idmesa=$_POST['idmesa'];
 $email=$_POST['email'];
@@ -43,7 +41,7 @@ if (!empty($reservaocupada)) {
     $insertarreservaonline=$pdo->prepare("INSERT INTO tbl_historialonline (email,nombre,apellido,fecha,hora,id_mesa) VALUES ('{$email}','{$nombre}','{$apellido}','{$fecha}','$hora',$idmesa)");
     $insertarreservaonline->execute();
     if (empty($_SESSION['nombre'])) {
-        header('location:../view/index.php');
+        header('location:../view/reservasonlineclient.php');
     }else{
         header('location:../view/zona.admin.php');
     }

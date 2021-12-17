@@ -24,6 +24,7 @@ if ($_SESSION['email']=="") {
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link rel="stylesheet" type="text/css" href="../css/styles.css">
+            <link rel="shortcut icon" type="image/png" href="../img/logo.png" />
             <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
             <title>Camareros</title>
         </head>
@@ -91,7 +92,7 @@ if ($_SESSION['email']=="") {
                     echo "<td class='gris'>{$row['apellido']}</td>";
                     echo "<td class='gris'>{$row['tipo']}</td>";
                     echo "<td><button type='submit'><a type='button' href='../view/formmodificarusuario.php?email={$row['email']}'>Modificar usuario</a></button></td>";
-                    echo "<td><button type='submit'><a type='button' href='../proceses/eliminarusuario.php?email={$row['email']}'>Eliminar usuario</a></button></td>";
+                    echo "<td><button class='buttononline' type='submit'><a type='button' href='../proceses/eliminarusuario.php?email={$row['email']}'>Eliminar usuario</a></button></td>";
                     echo "<tr>";
                 }
                 echo  "</div>";
