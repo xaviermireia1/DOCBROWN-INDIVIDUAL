@@ -136,3 +136,11 @@ function reservaCorrecta() {
         icon: "success",
     })
 }
+
+function reservaPasado() {
+    swal({
+        title: "Reservas pasadas",
+        text: "No se puede reservar con una hora anterior al día",
+        icon: "error",
+    })
+}

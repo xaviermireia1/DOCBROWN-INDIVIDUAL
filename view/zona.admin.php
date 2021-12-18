@@ -204,7 +204,9 @@ if (!empty($mesaonline)) {
             echo "<script>yaReservadoOnline();</script>";
         }else if ($_REQUEST['error']==2) {
             echo "<script>reservaCorrecta();</script>";
-        }   
+        }else if ($_REQUEST['error']==3) {
+            echo "<script>reservaPasado();</script>";
+        }  
     }
     ?>
     </body>
