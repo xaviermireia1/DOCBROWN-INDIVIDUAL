@@ -27,12 +27,12 @@
         if (empty($_SESSION['dateclient']) && empty($_SESSION['hourclient'])) {
             ?>
                   <p type="Fecha:"><input type="date" name="fecha" min="<?php echo date("Y-m-d"); ?>"></input></p>
-                  <p type="Hora:"><input type="time" name="hora" step="3600"></input></p>
+                  <p type="Hora:"><input type="time" min="08:00" max="23:00" name="hora" step="3600"></input></p>
             <?php
         }else{
             ?>
                 <p type="Fecha:"><input type="date" name="fecha" min="<?php echo date("Y-m-d"); ?>" value="<?php echo $_SESSION['dateclient']; ?>"></input></p>
-                <p type="Hora:"><input type="time" name="hora" step="3600" value="<?php echo $_SESSION['hourclient']; ?>"></input></p>
+                <p type="Hora:"><input type="time" min="08:00" max="23:00" name="hora" step="3600" value="<?php echo $_SESSION['hourclient']; ?>"></input></p>
             <?php
         }
   ?>

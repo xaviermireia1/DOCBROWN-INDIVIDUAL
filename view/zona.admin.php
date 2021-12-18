@@ -29,7 +29,9 @@ if (!empty($mesaonline)) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="../css/styles.css">
         <link rel="shortcut icon" type="image/png" href="../img/logo.png" />
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <script src="../js/script.js"></script>
         <title>Intranet</title>
     </head>
     <body>
@@ -189,5 +191,23 @@ if (!empty($mesaonline)) {
         </table>
         </div>
     </div>
+    <?php
+    if (!empty($_REQUEST['errorlocal'])) {
+        if ($_REQUEST['errorlocal']==1) {
+            echo "<script>yaReservado();</script>";
+        }else if ($_REQUEST['error']==2) {
+            echo "<script>reservaCorrecta();</script>";
+        }   
+    }
+    if (!empty($_REQUEST['error'])) {
+        if ($_REQUEST['error']==1) {
+            echo "<script>yaReservadoOnline();</script>";
+        }else if ($_REQUEST['error']==2) {
+            echo "<script>reservaCorrecta();</script>";
+        }else if ($_REQUEST['error']==3) {
+            echo "<script>reservaPasado();</script>";
+        }  
+    }
+    ?>
     </body>
     </html>

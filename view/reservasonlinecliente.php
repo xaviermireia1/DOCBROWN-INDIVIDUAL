@@ -13,7 +13,9 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="../js/script.js"></script>
     <title>Reservar mesas</title>
 </head>
 <body>
@@ -31,7 +33,7 @@
     </div>
     <center><form action="reservasonlinecliente.php" method="POST">
             <input type="date" class="input_filtro" name="fecha" required min="<?php $fechasistema=date('Y-m-d'); echo $fechasistema ?>" placeholder="Indica la fecha">
-            <input type="time" step="3600" class="input_filtro" required name="hora" placeholder="Indica la hora">
+            <input type="time" min="08:00" max="23:00" step="3600" class="input_filtro" required name="hora" placeholder="Indica la hora">
             <input type="number" min="1" class="input_filtro" name="capacidad" placeholder="Indica el numero de personas">
             <select name="localizacion" class="input_filtro">
                 <option value="" default>Todas las localizaciones</option>
@@ -98,5 +100,16 @@
             }
         ?>
     </div>
+    <?php
+    if (!empty($_REQUEST['error'])) {
+        if ($_REQUEST['error']==1) {
+            echo "<script>yaReservadoOnline();</script>";
+        }else if ($_REQUEST['error']==2) {
+            echo "<script>reservaCorrecta();</script>";
+        }else if ($_REQUEST['error']==3) {
+            echo "<script>reservaPasado();</script>";
+        }  
+    }
+?>
 </body>
 </html>

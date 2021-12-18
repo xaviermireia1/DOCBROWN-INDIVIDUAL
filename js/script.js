@@ -112,3 +112,35 @@ function validarmodreservaonline() {
         return false;
     }
 }
+
+function yaReservadoOnline() {
+    swal({
+        title: "Reserva ocupada",
+        text: "Ya se ha reservado la mesa introducida a la hora introducida",
+        icon: "error",
+    })
+}
+
+function yaReservado() {
+    swal({
+        title: "Mesa ocupada",
+        text: "Hay una reserva online en la mesa introducida, busca otra mesa",
+        icon: "error",
+    })
+}
+
+function reservaCorrecta() {
+    swal({
+        title: "Reserva completada",
+        text: "Se ha reservado la mesa de manera exitosa",
+        icon: "success",
+    })
+}
+
+function reservaPasado() {
+    swal({
+        title: "Reservas pasadas",
+        text: "No se puede reservar con una hora anterior al día",
+        icon: "error",
+    })
+}

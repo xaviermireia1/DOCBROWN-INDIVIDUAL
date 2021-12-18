@@ -13,6 +13,17 @@ $apellido=$_POST['apellido'];
 $fecha=$_POST['fecha'];
 $hora=$_POST['hora'];
 $silla=$_POST['silla'];
+$fechasistema=date('Y-m-d');
+$horasistema=date('H:i');
+if ($fechasistema == $fecha) {
+    if ($horasistema>$hora) {
+        if (empty($_SESSION['nombre'])) {
+            exit(header('location:../view/reservasonlinecliente.php?error=1'));
+        }else{
+            exit(header('location:../view/zona.admin.php?error=1'));
+        }
+    }
+}
 //Convertir hora menos
 $horamenos=strtotime('-30 minute',strtotime($hora));
 $horamenos = date('H:i',$horamenos);

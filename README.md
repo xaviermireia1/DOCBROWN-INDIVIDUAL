@@ -1,6 +1,6 @@
 # DOC-BROWN
 
-**El proyecto se trata de un restaurante para añadir/quitar reservas y añadir/quitar licencias, está hecho en PHP, MYSQL, HTML, CSS, JS**
+**El proyecto se trata de un restaurante para añadir/quitar reservas y añadir/quitar licencias tanto online como ya de ya, igual que hacer un CRUD de usuarios y recursos, está hecho en PHP, MYSQL, HTML, CSS, JS**
 
 ## Comenzando 🚀
 
@@ -18,6 +18,12 @@ Necesitar un editor de codigo, en mi caso utilice **VISUAL STUDIO CODE**, pero p
 Necesitas instalar el programa de XAMPP para poder leer los archivos de PHP y no tener problemas: https://www.apachefriends.org/es/index.html
 
 Otra herramienta es la base de datos el MYSQL, puedes utilizar el **PHPMYADMIN** que es el que viene por defecto en el XAMPP o el MySQL WorkBench
+
+### Acceso login
+```
+administrador: test@test.com 1234
+camarero: xaviergomez@docbrown.com 1234
+```
 
 ## Instalación 🔧
 Primero necesitas saber que en XAMPP cuando lo tengas instalado, lo que tienes que hacer es meter el proyecto en la ubicación de: c:\xampp\htdocs\nombredelproyecto.
@@ -60,18 +66,9 @@ Accedes a la plataforma, creas un sitio gratuito y subes el proyecto a la plataf
     SweetAlet - Biclioteca de alertas JS
     FontAwesome - Libreria de iconos
 
-## Versionado 📌
-
-Para todas las versiones disponibles, mira los tags en este repositorio.
-https://github.com/xaviermireia1/PR1/releases
-
 ## Autores ✒️
 
-    Xavier Gómez - Desarollador del Back-End
-    Diego Soledispa - Desarollador del Front-End 
-
-## Licencia 📄
-Mira el archivo LICENSE para detalles
+    Xavier Gómez - Desarollador WEB
 
 ## Expresiones de Gratitud 🎁
 
