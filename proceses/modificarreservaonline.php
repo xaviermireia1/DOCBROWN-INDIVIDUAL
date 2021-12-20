@@ -50,7 +50,7 @@ if (!empty($reservaocupada)) {
         if (empty($_SESSION['nombre'])) {
             header('location:../view/index.php');
         }else{
-            header('location:../view/zona.admin.php');
+            header('location:../view/vistareservasonline.php');
         }
 }else{
     if (empty($_SESSION['nombre'])) {
@@ -61,7 +61,7 @@ if (!empty($reservaocupada)) {
     }else{
         exit("<script>
                     alert('No hay ninguna mesa disponible durante esa fecha y hora')
-                    location.href='../view/zona.admin.php';
+                    location.href='../view/vistareservasonline.php';
                </script>");
     } 
 }

@@ -134,7 +134,7 @@ if (!empty($mesaonline)) {
                         echo "<td class='gris'>{$row['id_mesa']}</td>";
                         echo "<td class='gris'>{$row['nombre_localizacion']}</td>";
                         echo "<td><button type='submit'><a type='button' href='../view/formmodificarreservaonline.php?id={$row['id_historialonline']}'>Modificar reserva</a></button></td>";
-                        echo "<td><button type='submit'><a type='button' href='../proceses/eliminareservaonline.php?id={$row['id_historialonline']}'>Quitar reserva</a></button></td>";
+                        echo "<td><button class='buttononline' type='submit'><a type='button' href='../proceses/eliminareservaonline.php?id={$row['id_historialonline']}'>Quitar reserva</a></button></td>";
                     echo "</tr>";
                 }
             }
