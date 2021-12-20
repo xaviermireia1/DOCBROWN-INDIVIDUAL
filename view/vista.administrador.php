@@ -126,13 +126,17 @@ if (!empty($mesaonline)) {
                             echo "<td><button class='buttononline' type='submit'><a type='button' href='../proceses/eliminarmesa.php?idmesa={$row['id_mesa']}'>Eliminar mesa</a></button></td>";
                             break;                       
                         case 'no':
-                            echo "<td class='gris'><i class='fas fa-times red'></i></td>";
+                            echo "<td class='gris'><i class='fas fa-times red'></i> <i class='fas fa-map-marker-alt red'></i></td>";
                             echo "<td><button type='submit'><a type='button' href='../view/formmodificarmesa.php?idmesa={$row['id_mesa']}&disponibilidad={$row['disponibilidad']}'>Modificar mesa</a></button></td>";
                             break;
                         case 'mantenimiento':
                             echo "<td class='gris'><i class='fas fa-briefcase brown'></i></td>";
                             echo "<td><button type='submit'><a type='button' href='../view/formmodificarmesa.php?idmesa={$row['id_mesa']}&disponibilidad={$row['disponibilidad']}'>Modificar mesa</a></button></td>";
                             echo "<td><button class='buttononline' type='submit'><a type='button' href='../proceses/eliminarmesa.php?idmesa={$row['id_mesa']}'>Eliminar mesa</a></button></td>";
+                            break;
+                        case 'online':
+                            echo "<td class='gris'><i class='fas fa-times red'></i> <i class='fas fa-globe red'></i></td>";
+                                echo "<td><button type='submit'><a type='button' href='../view/formmodificarmesa.php?idmesa={$row['id_mesa']}&disponibilidad={$row['disponibilidad']}'>Modificar mesa</a></button></td>";
                             break;
                     }
             echo "</tr>";
