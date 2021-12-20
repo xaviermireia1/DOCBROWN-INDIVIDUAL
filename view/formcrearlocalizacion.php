@@ -27,7 +27,7 @@ if (!empty($mesaonline)) {
     <link rel="shortcut icon" type="image/png" href="../img/logo.png" />
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="../js/script.js"></script>
-    <title>Modificar localizacion</title>
+    <title>Añadir localizacion</title>
 </head>
 <body>
     <!--Header-->

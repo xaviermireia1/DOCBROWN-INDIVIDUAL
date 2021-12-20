@@ -26,7 +26,7 @@ if ($_SESSION['email']=="") {
             <link rel="stylesheet" type="text/css" href="../css/styles.css">
             <link rel="shortcut icon" type="image/png" href="../img/logo.png" />
             <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-            <title>Camareros</title>
+            <title>Administrador</title>
         </head>
         <body>
         <ul class="padding-lat">
