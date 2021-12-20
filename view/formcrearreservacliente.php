@@ -20,19 +20,19 @@
 <div class="formclient">
 <form class="form" action="../proceses/crearreservaonline.php" method="POST">
   <h2>Reserva aquí</h2>
-  <p type="Email:"><input type="email" name="email" placeholder="Introduce el email.."></input></p>
-  <p type="Nombre:"><input name="nombre" placeholder="Escribe tu nombre.."></input></p>
-  <p type="Apellido:"><input name="apellido" placeholder="Escribe el apellido.."></input></p>
+  <p type="Email:"><input type="email" required name="email" placeholder="Introduce el email.."></input></p>
+  <p type="Nombre:"><input name="nombre" required placeholder="Escribe tu nombre.."></input></p>
+  <p type="Apellido:"><input name="apellido" required placeholder="Escribe el apellido.."></input></p>
   <?php
         if (empty($_SESSION['dateclient']) && empty($_SESSION['hourclient'])) {
             ?>
-                  <p type="Fecha:"><input type="date" name="fecha" min="<?php echo date("Y-m-d"); ?>"></input></p>
-                  <p type="Hora:"><input type="time" min="08:00" max="23:00" name="hora" step="3600"></input></p>
+                  <p type="Fecha:"><input type="date" required name="fecha" min="<?php echo date("Y-m-d"); ?>"></input></p>
+                  <p type="Hora:"><input type="time" required min="08:00" max="23:00" name="hora" step="3600"></input></p>
             <?php
         }else{
             ?>
-                <p type="Fecha:"><input type="date" name="fecha" min="<?php echo date("Y-m-d"); ?>" value="<?php echo $_SESSION['dateclient']; ?>"></input></p>
-                <p type="Hora:"><input type="time" min="08:00" max="23:00" name="hora" step="3600" value="<?php echo $_SESSION['hourclient']; ?>"></input></p>
+                <p type="Fecha:"><input type="date" required name="fecha" min="<?php echo date("Y-m-d"); ?>" value="<?php echo $_SESSION['dateclient']; ?>"></input></p>
+                <p type="Hora:"><input type="time" required min="08:00" max="23:00" name="hora" step="3600" value="<?php echo $_SESSION['hourclient']; ?>"></input></p>
             <?php
         }
   ?>
