@@ -55,7 +55,7 @@ if (!empty($mesaonline)) {
                 ?>
                 <form action="zona.admin.php" method="post">
                     <div class="column-2">
-                        <label for="localizacion">Ubicacion</label><br>
+                        <label for="localizacion">Ubicación</label><br>
                         <select name="localizacion" class="casilla">
                             <option value="" default>Todas las localizaciones</option>
                             <?php
@@ -195,7 +195,7 @@ if (!empty($mesaonline)) {
     if (!empty($_REQUEST['errorlocal'])) {
         if ($_REQUEST['errorlocal']==1) {
             echo "<script>yaReservado();</script>";
-        }else if ($_REQUEST['error']==2) {
+        }else if ($_REQUEST['errorlocal']==2) {
             echo "<script>reservaCorrecta();</script>";
         }   
     }

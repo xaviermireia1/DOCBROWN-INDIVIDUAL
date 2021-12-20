@@ -41,9 +41,9 @@ if (!empty($mesaonline)) {
     <div class="fondo">        
         <form action="../proceses/crearmesa.php" method="post" onsubmit="return validarmesa()">
             <label>Cantidad de mesas</label>
-            <input class="casilla" type="number" name="mesa" id="mesa">
+            <input class="casilla" type="number" min="1" name="mesa" id="mesa">
             <label>Cantidad de sillas</label>
-            <input class="casilla" type="number" name="silla" id="silla">
+            <input class="casilla" type="number" min="1" name="silla" id="silla">
             <br><label>Ubicacion</label>
             <select name="localizacion" class="casilla">
                 <?php

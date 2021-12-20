@@ -62,7 +62,7 @@ if (!empty($mesaonline)) {
             <label>Dia de reserva</label>
             <input class="casilla" type="date" name="fecha" id="fecha" value="<?php echo $fecha; ?>" min="<?php echo $fechasistema ?>">
             <label>Hora de reserva</label>
-            <input class="casilla" type="time" step="3600" name="hora" id="hora" value="<?php echo $hora; ?>">
+            <input class="casilla" type="time" min="08:00" max="23:00" step="3600" name="hora" id="hora" value="<?php echo $hora; ?>">
             <input type="hidden" name="email" id="email" value="<?php echo $email; ?>">
             <input type="hidden" name="idhistorial" id="idhistorial" value="<?php echo $_GET['id']; ?>">
              <div class="column-1">

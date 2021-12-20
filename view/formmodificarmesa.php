@@ -51,9 +51,9 @@ if (!empty($mesaonline)) {
         <form action="../proceses/modificarmesa.php" method="post" onsubmit="return validarmesa()">
         <h1>Modificando la mesa: <?php echo $idmesa; ?></h1>
             <label>Cantidad de mesas</label>
-            <input class="casilla" type="number" name="mesa" id="mesa" value="<?php echo $cantmesa; ?>">
+            <input class="casilla" type="number" min="1" name="mesa" id="mesa" value="<?php echo $cantmesa; ?>">
             <label>Cantidad de sillas</label>
-            <input class="casilla" type="number" name="silla" id="silla" value="<?php echo $cantsillas; ?>">
+            <input class="casilla" type="number" min="1" name="silla" id="silla" value="<?php echo $cantsillas; ?>">
             <input type="hidden" name="disponibilidad" value="<?php echo $disponibilidad; ?>">
             <input type="hidden" name="idmesa" value="<?php echo $idmesa; ?>">
             <br><label>Ubicacion</label>

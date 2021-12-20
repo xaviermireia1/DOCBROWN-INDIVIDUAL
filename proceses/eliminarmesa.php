@@ -8,6 +8,7 @@ if (($_SESSION['email']=="") || ($_SESSION['tipo_user']!="administrador")) {
     $historial=$pdo->prepare("SELECT * FROM tbl_historial WHERE id_mesa=$idmesa");
     $historialonline=$pdo->prepare("SELECT * FROM tbl_historialonline WHERE id_mesa=$idmesa");
     $historial->execute();
+    $historialonline->execute();
     $historialres=$historial->fetchAll(PDO::FETCH_ASSOC);
     $historialonl=$historialonline->fetchAll(PDO::FETCH_ASSOC);
     try{

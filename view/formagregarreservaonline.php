@@ -1,6 +1,12 @@
 <?php
 session_start();
 require_once '../services/connection.php';
+if ($_SESSION['tipo_user']=='administrador') {
+    header("location:vista.administrador.php");
+}
+if ($_SESSION['email']=="") {
+    header("location:login.html");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,7 +40,7 @@ require_once '../services/connection.php';
             <br><label>Email cliente</label>
             <input class="casilla" type="email" name="email" id="email">
             <label>Dia de reserva</label>
-            <input class="casilla" type="date" name="fecha" id="fecha">
+            <input class="casilla" type="date" name="fecha" id="fecha" min="<?php echo date("Y-m-d"); ?>">
             <br><label>Hora de reserva</label>
             <input class="casilla" type="time" min="08:00" max="23:00" step="3600" name="hora" id="hora">
             <input type="hidden" name="idmesa" value="<?php echo $_GET['idmesa']; ?>">            
